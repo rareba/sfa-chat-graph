@@ -364,7 +364,9 @@ namespace SfaChatGraph.Server.RDF
 		{
 			try
 			{
-				return _endpoint.QueryGraphAsync(Queries.DescribeQuery(iri));
+				var query = new SparqlParameterizedString("DESCRIBE @iri");
+				query.SetUri("iri", new Uri(iri));
+				return _endpoint.QueryGraphAsync(query.ToString());
 			}
 			catch (Exception ex)
 			{

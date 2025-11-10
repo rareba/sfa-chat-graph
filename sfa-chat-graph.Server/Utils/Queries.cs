@@ -88,11 +88,6 @@
 		LIMIT {2}
 		""";
 
-		public static string DescribeQuery(string iri) => string.Format(DESCRIBE_QUERY, iri);
-		public const string DESCRIBE_QUERY = "DESCRIBE <{0}>";
-
-
-
 		public static string RelatedTriplesQuery(IEnumerable<string> iris, IEnumerable<string> predicates, int limit = 25) => string.Format(RELATED_QUERY_FORMAT, iris.ToIriList(), predicates.ToIriList(), limit);
 		public const string RELATED_QUERY_FORMAT = """
 		SELECT ?s ?p ?o WHERE {{		
