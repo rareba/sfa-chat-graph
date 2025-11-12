@@ -1,0 +1,20 @@
+<div class="control-bar-float control-container">
+    <div class="control-bar">
+        <button class="icon-button" (click)="save()">
+            <mat-icon>download</mat-icon>
+        </button>
+        <button class="icon-button" (click)="expandAll()">
+            <mat-icon fontSet="material-symbols-outlined">expand_content</mat-icon>
+        </button>
+        <button class="icon-button" (click)="collapseAll()">
+            <mat-icon fontSet="material-symbols-outlined">collapse_content</mat-icon>
+        </button>
+        <button class="icon-button" (click)="relayouLeafes()">
+            <mat-icon fontSet="material-symbols-outlined">replay</mat-icon>
+        </button>
+        <button class="inverted-icon-button" (click)="togglePause()">
+            <mat-icon *ngIf="isPaused()">play_arrow</mat-icon>
+            <mat-icon *ngIf="!isPaused()">stop</mat-icon>
+        </button>
+    </div>
+</div>

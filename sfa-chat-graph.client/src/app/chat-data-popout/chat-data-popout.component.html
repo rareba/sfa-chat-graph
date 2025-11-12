@@ -1,0 +1,41 @@
+<div class="popup-window">
+    <div class="popup-buttons">
+        <button class="inverted-icon-button" (click)="close()">
+            <mat-icon fontSet="material-symbols-outlined">close</mat-icon>
+        </button>
+        <button title="Download content" class="inverted-icon-button" (click)="download()">
+            <mat-icon fontSet="material-symbols-outlined">download</mat-icon>
+        </button>
+    </div>
+    <div class="popup-content table-container-bright">
+        @if(data && data.error){
+        <div class="popup-section">
+            <div class="popup-section-header">
+                <mat-icon fontSet="material-symbols-outlined">error</mat-icon>
+                <b>An error occured during your request</b>
+            </div>
+            <markdown [katex]="true" [emoji]="true" [clipboard]="true" [lineNumbers]="true" ngPreserveWhitespaces>
+                ```{{data.error}}```</markdown>
+        </div>
+        }
+
+        <div *ngIf="data" class="popup-section">
+            <div class="popup-section-header">
+                <mat-icon fontSet="material-symbols-outlined">info</mat-icon>
+                <b>{{data.description}}</b>
+            </div>
+
+            @if(data.mimeType && data.mimeType.startsWith("image/")){
+            <img [src]="getImgContent()" alt="Image: {{data.description}}" />
+            }
+            @else if (data.mimeType && data.mimeType == "text/html") {
+            <div *ngIf="textContent" class="html-content" [innerHtml]="textContent"></div>
+            }
+            @else {
+            <markdown *ngIf="textContent" [katex]="true" [emoji]="true" [clipboard]="true" [lineNumbers]="true" ngPreserveWhitespaces
+                [innerHtml]="textContent">
+            </markdown>
+            }
+        </div>
+    </div>
+</div>

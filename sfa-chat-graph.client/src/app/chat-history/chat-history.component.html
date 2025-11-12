@@ -1,0 +1,80 @@
+<div class="chat-container">
+    <div #chatHistory class="chat-history">
+        @for(msg of messages; track msg){
+        <div id="msg-{{msg.id}}" class="chat-message table-container-bright" [class]="msg.cls">
+            <div class="message-content">
+                <markdown [katex]="true" [emoji]="true" [clipboard]="true" [lineNumbers]="true"
+                    (ready)="scrollToBottom()" ngPreserveWhitespaces>
+                    {{msg.message}}
+                </markdown>
+                <div *ngIf="msg.data.length > 0" class="data-tag-container">
+                    @for(data of msg.data; track data)
+                    {
+                    <div class="data-tag-btn-group" [class]="data.className">
+                        <button [classList]="data.className" (click)="showMessageDisplayDetail(data)"><span
+                                class="tooltip-wide" [attr.data-text]="data.description">{{data.label}}</span></button>
+                        <button class="icon-button"
+                            (click)="showMessageDisplayDetail(data, true)"><mat-icon>download</mat-icon></button>
+                    </div>
+                    }
+                </div>
+
+
+            </div>
+            <div class="marker-container">
+                <span *ngFor="let marker of msg.markers" class="tooltip-long"
+                    [attr.data-text]="'Subgraph ' + marker.label">
+                    <svg class="marker" viewBox="0 0 30 30">
+                        <circle cx="15" cy="15" r="15" [attr.fill]="marker.color" />
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+
+        }
+        @if(activity) {
+        <div id="msg-activity" class="chat-message chat-message-left">
+            <div class="message-content">
+                <div class="activity-header">
+                    <svg class="activity-spinner">
+                        <rect x="30%" y="0" width="40%" height="100%" />
+                        <rect x="0" y="30%" width="100%" height="40%" />
+                    </svg>
+                    <p class="activity-text">{{activity.Activity}}</p>
+                </div>
+                <p *ngIf="activity.Detail" class="activity-detail">{{activity.Detail}}</p>
+            </div>
+        </div>
+        }
+
+        @if(getError()) {
+        <div id="msg-error" class="error-message chat-message">
+            <div class="error-content">
+                <div class="error-header">
+                    <b>An error occured during your request</b>
+                    <mat-icon fontSet="material-symbols-outlined">error</mat-icon>
+                </div>
+                <markdown>{{getError()}}</markdown>
+                <div class="error-buttons">
+                    <button class="inverted-button" (click)="retry()">Retry</button>
+                    @if(getErrorEmail()){
+                    <a class="inverted-button" href="{{getErrorEmail()}}">Send error report</a>
+                    }
+                </div>
+            </div>
+
+        </div>
+        }
+    </div>
+    <form>
+        <div class="form-row control-container">
+            <textarea placeholder="Type a message..." name="message" (keypress)="onMessageKeyPress($event)"
+                [(ngModel)]="message" class="form-textarea grow" type="text"></textarea>
+            <button class="inverted-icon-button" [disabled]="waitingForResponse||!message" (click)="send()"
+                aria-label="Send">
+                <mat-icon fontSet="material-symbols-outlined">send</mat-icon>
+            </button>
+        </div>
+    </form>
+</div>

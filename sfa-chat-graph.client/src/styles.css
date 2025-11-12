@@ -1,0 +1,393 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {}
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+:root {
+    --app-container: #fafafa;
+    --app-container-accent: #eaeaff;
+    --app-background: #ffffff;
+    --app-text-color: #202020;
+    --app-text-color-dark: #f0f0f0;
+    --app-background-dark: #202020;
+    --app-table-border: #424242;
+    --app-background-dark-accent: #252545;
+    --app-control-background: #eaeaea;
+    --app-control-hover: #d9d9d9;
+    --app-control-background-dark: #262626;
+    --app-control-disabled-dark: #505050;
+    --app-control-hover-dark: #494949;
+    --app-control-text: #262626;
+    --app-control-text-dark: #fcfcfc;
+    --app-corner-table-radius: .25em;
+    --app-error-color: #f36666;
+}
+
+pre[class*=language-]:before,
+pre[class*=language-]:after {
+    box-shadow: none !important;
+}
+
+code {
+    font-family: 'Fira Code', monospace !important;
+}
+
+@supports (font-variation-settings: normal) {
+    code {
+        font-family: 'Fira Code VF', monospace !important;
+    }
+}
+
+b,
+strong {
+    font-weight: 600 !important;
+}
+
+.inverted-button {
+    border: none;
+    background-color: var(--app-control-background-dark);
+    color: var(--app-control-text-dark);
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5em 1em;
+    font-size: medium;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.inverted-button:hover {
+    background-color: var(--app-control-hover-dark);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.inverted-button:disabled {
+    background-color: var(--app-control-disabled-dark);
+}
+
+.inverted-icon-button {
+    border: none;
+    background-color: var(--app-control-background-dark);
+    color: var(--app-control-text-dark);
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.inverted-icon-button:hover {
+    background-color: var(--app-control-hover-dark);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.inverted-icon-button:disabled {
+    background-color: var(--app-control-disabled-dark);
+}
+
+.form-row {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.form-input {
+    padding: .5em;
+    border-radius: .5em;
+    border: 1px solid #a0a0a0;
+    background-color: var(--app-control-background);
+    color: var(--app-control-text);
+    transition: background-color 0.3s ease-in-out;
+    font-size: medium;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.form-textarea {
+    padding: .5em;
+    border-radius: .5em;
+    border: 1px solid #a0a0a0;
+    background-color: var(--app-control-background);
+    color: var(--app-control-text);
+    transition: background-color 0.3s ease-in-out;
+    height: max-content;
+    field-sizing: content;
+    resize: none;
+    font-size: medium;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 1em;
+    background-color: var(--app-control-background);
+    color: var(--app-control-text);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.icon-button:hover {
+    background-color: var(--app-control-hover);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.control-container {
+    background-color: var(--app-container);
+    border-radius: .5em;
+    padding: .5em .5em;
+    background-color: var(--app-container);
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
+}
+
+.table-container-bright table tr:first-child th:first-child {
+    border-radius: var(--app-corner-table-radius) 0px 0px 0px;
+}
+
+.table-container-bright table tr:first-child th:last-child {
+    border-radius: 0px var(--app-corner-table-radius) 0px 0px;
+}
+
+.table-container-bright table tr:last-child td:first-child {
+    border-radius: 0px 0px 0px var(--app-corner-table-radius);
+}
+
+.table-container-bright table tr:last-child td:last-child {
+    border-radius: 0px 0px var(--app-corner-table-radius) 0px;
+}
+
+.table-container-bright table tr:not(:last-child) td,
+th {
+    padding: .5em;
+    border-bottom: var(--app-table-border) 1px solid;
+}
+
+.table-container-bright table tr td:not(:last-child),
+th:not(:last-child) {
+    border-right: var(--app-table-border) 1px solid;
+}
+
+.table-container-bright table tr td, th {
+    word-wrap: break-word;
+}
+
+.table-container-bright table tr td, th {
+    padding: 0.25em;
+}
+
+.table-container-bright table a {
+    color: var(--app-text-color);
+}
+
+.table-container-bright table th {
+    background-color: #dbdbdb;
+    font-weight: normal;
+}
+
+.table-container-bright table {
+    border-collapse: separate;
+    border: var(--app-table-border) 1px solid;
+    border-radius: var(--app-corner-table-radius);
+}
+
+.chat-message a {
+    color: var(--app-text-color);
+}
+
+.tooltip {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    /* making the .tooltip span a container for the tooltip text */
+    /* little indicater to indicate it's hoverable */
+}
+
+.chat-message img {
+    max-width: 100%;
+}
+
+.tooltip-wide {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.tooltip-wide:before {
+    height: fit-content;
+    max-height: 300px;
+    width: fit-content;
+    text-align: left;
+
+    content: attr(data-text);
+    /* here's the magic */
+    position: absolute;
+
+    /* vertically center */
+    top: 50%;
+    transform: translateY(-100%);
+
+    /* move to right */
+    left: 100%;
+    margin-left: 15px;
+    /* and add a small left margin */
+
+    /* basic styles */
+    padding: .5em;
+    border-radius: 10px;
+    background: var(--app-background-dark);
+    color: var(--app-text-color-dark);
+    font-size: small;
+
+    display: none;
+    /* hide by default */
+    -webkit-animation: fade-in-fwd 0.6s ease-in-out 5s alternate-reverse forwards;
+    animation: fade-in-fwd 0.6s ease-in-out 5s alternate-reverse forwards;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+.tooltip-wide:hover:before {
+    display: block;
+    z-index: 2;
+}
+
+
+.tooltip-long {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.tooltip-long:before {
+    width: fit-content;
+    max-width: 300px;
+    height: fit-content;
+    text-align: left;
+
+    content: attr(data-text);
+    /* here's the magic */
+    position: absolute;
+
+    /* vertically center */
+    top: 50%;
+    transform: translateY(-100%);
+
+    /* move to right */
+    left: 100%;
+    margin-left: 15px;
+    /* and add a small left margin */
+
+    /* basic styles */
+    padding: .5em;
+    border-radius: 10px;
+    background: var(--app-background-dark);
+    color: var(--app-text-color-dark);
+    font-size: small;
+
+    display: none;
+    /* hide by default */
+    -webkit-animation: fade-in-fwd 0.6s ease-in-out 5s alternate-reverse forwards;
+    animation: fade-in-fwd 0.6s ease-in-out 5s alternate-reverse forwards;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+.tooltip-long:hover:before {
+    display: block;
+    z-index: 2;
+}
+
+.tooltip:before {
+    content: attr(data-text);
+    /* here's the magic */
+    position: absolute;
+
+    /* vertically center */
+    top: 50%;
+    transform: translateY(-100%);
+
+    /* move to right */
+    left: 100%;
+    margin-left: 15px;
+    /* and add a small left margin */
+
+    /* basic styles */
+    width: 100px;
+    padding: .5em;
+    border-radius: 10px;
+    background: var(--app-background-dark);
+    color: var(--app-text-color-dark);
+    text-align: center;
+    font-size: small;
+
+    display: none;
+    /* hide by default */
+    -webkit-animation: fade-in-fwd 0.6s ease-in-out 5s alternate-reverse forwards;
+    animation: fade-in-fwd 0.6s ease-in-out 5s alternate-reverse forwards;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+.tooltip:hover:before {
+    display: block;
+}
+
+.chat-message hr {
+    border: none;
+    border-top: 2px solid var(--app-text-color) !important;
+    margin: 1em 0em;
+}
+
+.chat-message h1,
+h2,
+h3,
+h4 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.chat-message ul {
+    margin: 0.5em 0em;
+}
+
+@-webkit-keyframes fade-in-fwd {
+    0% {
+        -webkit-transform: translateZ(-80px);
+        transform: translateZ(-80px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-fwd {
+    0% {
+        -webkit-transform: translateZ(-80px);
+        transform: translateZ(-80px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}

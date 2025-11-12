@@ -1,0 +1,56 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sfa-chat-graph.Server", "sfa-chat-graph.Server\sfa-chat-graph.Server.csproj", "{0EA78725-4796-4F94-9EB4-6A3C2AA1B480}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "sfa-chat-graph.client", "sfa-chat-graph.client\sfa-chat-graph.client.esproj", "{37E8CE2C-E560-4247-8902-6D4FF7F95902}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sfa-chat-graph.Playground", "sfa-chat-graph.Playground\sfa-chat-graph.Playground.csproj", "{69C5BAB3-5933-4473-AA75-22D0BBAB0CA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwosFramework.Generators.FunctionCalling", "AwosFramework.Generators.FunctionCalling\AwosFramework.Generators.FunctionCalling.csproj", "{302325FB-7350-4F79-9CB8-B6DE8CB50469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwosFramework.ApiClients.Jupyter", "AwosFramework.ApiClients.Jupyter\AwosFramework.ApiClients.Jupyter.csproj", "{9F1B1198-5177-4141-98C6-8045C844CA52}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1234F842-1F52-4B59-BC94-07274D7DE700}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EA78725-4796-4F94-9EB4-6A3C2AA1B480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA78725-4796-4F94-9EB4-6A3C2AA1B480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA78725-4796-4F94-9EB4-6A3C2AA1B480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA78725-4796-4F94-9EB4-6A3C2AA1B480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37E8CE2C-E560-4247-8902-6D4FF7F95902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37E8CE2C-E560-4247-8902-6D4FF7F95902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37E8CE2C-E560-4247-8902-6D4FF7F95902}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{37E8CE2C-E560-4247-8902-6D4FF7F95902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37E8CE2C-E560-4247-8902-6D4FF7F95902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37E8CE2C-E560-4247-8902-6D4FF7F95902}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{69C5BAB3-5933-4473-AA75-22D0BBAB0CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C5BAB3-5933-4473-AA75-22D0BBAB0CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C5BAB3-5933-4473-AA75-22D0BBAB0CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C5BAB3-5933-4473-AA75-22D0BBAB0CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{302325FB-7350-4F79-9CB8-B6DE8CB50469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302325FB-7350-4F79-9CB8-B6DE8CB50469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302325FB-7350-4F79-9CB8-B6DE8CB50469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302325FB-7350-4F79-9CB8-B6DE8CB50469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F1B1198-5177-4141-98C6-8045C844CA52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F1B1198-5177-4141-98C6-8045C844CA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F1B1198-5177-4141-98C6-8045C844CA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F1B1198-5177-4141-98C6-8045C844CA52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1234F842-1F52-4B59-BC94-07274D7DE700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1234F842-1F52-4B59-BC94-07274D7DE700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1234F842-1F52-4B59-BC94-07274D7DE700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1234F842-1F52-4B59-BC94-07274D7DE700}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A7242CB-6C1A-4A09-89DA-FD332DDAF574}
+	EndGlobalSection
+EndGlobal

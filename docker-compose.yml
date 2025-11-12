@@ -1,0 +1,53 @@
+services:
+  backend:
+    restart: unless-stopped
+    image: ${DOCKER_REGISTRY-}sfachatgraphserver
+    build:
+      context: .
+      dockerfile: ./sfa-chat-graph.Server/Dockerfile
+    environment:
+      - JUPYTEROPTIONS__ENDPOINT=http://jupyter:8888
+      - CONNECTIONSTRINGS__MONGO=mongodb://mongodb:27017/sfa-chat-graph
+      - AICONFIG__APIKEY=${OPENAI_KEY} 
+    ports:
+      - "1221:8080" 
+
+  jupyter:
+    restart: unless-stopped
+# comment for production
+    image: quay.io/jupyter/scipy-notebook 
+    command: start-notebook.sh --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.disable_check_xsrf=True
+#   uncomment for production
+#    networks:
+#      - no-internet
+#    image: ${DOCKER_REGISTRY-}sfachatgraphjupyter 
+#    build:
+#      context: .
+#      dockerfile: ./jupyter/Dockerfile
+
+  mongodb:
+    restart: unless-stopped
+    image: mongo
+    volumes:
+      - mongo_data:/data/db
+
+  express:
+    restart: unless-stopped
+    image: mongo-express
+    ports:
+      - 1222:8081
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_URL=mongodb://mongodb:27017 
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=${EXPRESS_PW} 
+      
+  # valkey:
+  #   image: valkey/valkey
+  #   restart: unless-stopped
+
+
+volumes:
+  mongo_data:
+    driver: local
