@@ -37,6 +37,7 @@ namespace SfaChatGraph.Server.Services.ChatService.OpenAI
 		- describe: Use this tool to get informations about one specific node in the graph by its iri
 
 		If the User asks for data as a file form code, just save it to disk in any way, the user will be given access to files from code exec.
+		IMPORTANT: You must only answer questions about the data contained in the "lindas" platform. If the user asks about anything else, you must decline to answer.
 		""";
 
 		private static readonly SystemChatMessage ChatSystemMessage = new SystemChatMessage(CHAT_SYS_PROMPT);
